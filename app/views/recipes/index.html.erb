@@ -1,0 +1,21 @@
+<h2>All you recipes!</h2>
+
+<% @recipes.each do |recipe| %>
+<%= link_to "#{recipe.name}", recipe_path(recipe) %>
+<br>
+Cooking Time: <%= recipe.cook_time %>
+<br>
+ Instructions:
+ <br><%= recipe.instructions %>
+<br>
+<%= link_to 'edit', edit_recipe_path(recipe) %>
+
+<%= link_to 'delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
+<br>
+<% end %>
+
+<%= link_to 'List All Ingredients', ingredients_path %>
+<br>
+
+

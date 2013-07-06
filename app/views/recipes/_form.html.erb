@@ -1,0 +1,23 @@
+<%= form_for(@recipe) do |f| %>
+Name:
+<br>
+<%= f.text_field :name %>
+<br>
+Cooking Time:
+<br>
+<%= f.text_field :cook_time %>
+<br>
+Instructions:
+<br>
+<%= f.text_field :instructions %>
+<br>
+Ingredients:
+<br>
+<% for ingredient in Ingredient.find(:all) %>
+    <div>
+      <%= check_box_tag "recipe[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient) %>
+      <%= ingredient.name %>
+    </div>
+<% end %>
+<%= f.submit submit_button_value %>
+<% end %>
