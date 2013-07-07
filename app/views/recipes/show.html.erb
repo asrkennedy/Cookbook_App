@@ -1,6 +1,6 @@
 <h2> <%= @recipe.name %></h2>
 <br>
-<%= image_tag(@recipe.image_url) if @recipe.image_url %>
+<%= image_tag(@recipe.image_url) unless @recipe.image_url.blank? %>
 <br>
 <br>
 Cooking Time: <%= @recipe.cook_time %>
