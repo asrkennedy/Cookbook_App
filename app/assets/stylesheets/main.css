@@ -1,0 +1,21 @@
+body {
+}
+
+li {
+  list-style-type: none;
+}
+
+div.background {
+  background-image: url('http://www.gimmesomeoven.com/wp-content/uploads/2009/12/drizzling-the-chocolate1.jpg');
+  height: 80px;
+}
+
+div.container {
+  padding-top: 50px;
+}
+
+div.container h2 {
+  text-align: center;
+  color: #592536;
+}
+

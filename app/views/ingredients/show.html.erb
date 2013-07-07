@@ -1,5 +1,13 @@
 <%= @ingredient.name %>
 <br>
+Used in the following recipes:
+  <ul>
+    <% @ingredient.recipes.each do |r| %>
+      <li><%=link_to r.name, recipe_path(r) %> <br>
+        </li>
+    <%end%>
+    <br>
+    <br>
 <%= link_to 'Ingredients Home', ingredients_path %>
 <br>
 

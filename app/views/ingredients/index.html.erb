@@ -1,15 +1,15 @@
 <h2>All your ingredients!</h2>
-<ul>
+<ol>
 <% @ingredients.each do |ingredient| %>
-<li><%= ingredient.name %>
+<li><h4><%= link_to ingredient.name, ingredient_path(ingredient) %></h4>
 </li>
 <br>
-<%= link_to 'edit', edit_ingredient_path(ingredient) %>
-<br>
+<%= link_to 'edit', edit_ingredient_path(ingredient) %> |
+
 <%= link_to 'delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %>
 <br>
 <br>
 <% end %>
-</ul>
+</ol>
 <%= link_to 'Home', recipes_path %>
 <br>

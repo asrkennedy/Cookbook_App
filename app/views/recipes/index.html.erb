@@ -1,12 +1,10 @@
-<h2>All you recipes!</h2>
-
-<% @recipes.each do |recipe| %>
-<%= link_to "#{recipe.name}", recipe_path(recipe) %>
+<h2>All your recipes!</h2>
 <br>
+<% @recipes.each do |recipe| %>
+<h4><%= link_to "#{recipe.name}", recipe_path(recipe) %></h4>
 Cooking Time: <%= recipe.cook_time %>
 <br>
- Instructions:
- <br><%= recipe.instructions %>
+ Instructions: <%= recipe.instructions %>
 <br>
 <%= link_to 'edit', edit_recipe_path(recipe) %>
 

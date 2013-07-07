@@ -1,15 +1,17 @@
-<%= @recipe.name %>
+<h2> <%= @recipe.name %></h2>
 <br>
 <%= image_tag@recipe.image_url %>
+<br>
 <br>
 Cooking Time: <%= @recipe.cook_time %>
 <br>
  Instructions: <%= @recipe.instructions %>
 <br>
 Ingredients:
+<br>
   <ul>
-    <% @recipe.ingredients.each do |i| %>
-      <li><%= i.name %> <br>
+    <% @recipe.ingredients.each do |ingredient| %>
+      <li><%=link_to ingredient.name, ingredient_path(ingredient) %> <br>
         </li>
     <%end%>
 </ul>
