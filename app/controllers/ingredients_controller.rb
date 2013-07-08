@@ -26,7 +26,16 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new(params[:ingredient])
     @ingredient.save
-    redirect_to ingredients_path
+
+     respond_to do |format|
+      if @ingredient.save
+        format.html { redirect_to @ingredient, notice: 'Ingredient was successfully created.' }
+        format.json { render json: @ingredient, status: :created, location: @ingredient}
+      else
+        format.html { render action: "new"}
+        format.json { render json: @ingredient.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
 def destroy

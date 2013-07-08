@@ -1,4 +1,14 @@
 <%= form_for(@ingredient) do |f| %>
+<% if @ingredient.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(@ingredient.errors.count, "error") %> has occurred:</h4>
+      <ul>
+      <% @ingredient.errors.full_messages.each do |msg| %>
+        <h3><%= msg %></h3>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 Name:
 <br>
 <%= f.text_field :name %>
