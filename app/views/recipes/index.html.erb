@@ -2,18 +2,21 @@
 <br>
 <% @recipes.each do |recipe| %>
 <h4><%= link_to "#{recipe.name}", recipe_path(recipe) %></h4>
-Cooking Time: <%= recipe.cook_time %>
 <br>
- Instructions: <%= recipe.instructions %>
+<p class='label'>Category:</p> <%= recipe.category.name if recipe.category %>
 <br>
+<p class='label'>Cooking Time: </p><%= recipe.cook_time %>
+<br>
+ <p class='label'>Instructions: </p> <%= recipe.instructions %>
+<br>
+<% if can? :create, Recipe %>
 <%= link_to 'edit', edit_recipe_path(recipe) %>
-
 <%= link_to 'delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 <br>
 <br>
 <% end %>
 
-<%= link_to 'List All Ingredients', ingredients_path %>
 <br>
 
 

@@ -3,13 +3,15 @@
 <% @ingredients.each do |ingredient| %>
 <li><h4><%= link_to ingredient.name, ingredient_path(ingredient) %></h4>
 </li>
-<br>
+
+<% if can? :create, Ingredient %>
 <%= link_to 'edit', edit_ingredient_path(ingredient) %> |
 
 <%= link_to 'delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %>
 <br>
+<% end %>
 <br>
 <% end %>
 </ol>
-<%= link_to 'Home', recipes_path %>
+
 <br>

@@ -3,11 +3,14 @@
 <%= image_tag(@recipe.image_url) unless @recipe.image_url.blank? %>
 <br>
 <br>
-Cooking Time: <%= @recipe.cook_time %>
+<p class='label'>Category:</p>
+<%= @recipe.category.name if @recipe.category %>
 <br>
- Instructions: <%= @recipe.instructions %>
+<p class='label'>Cooking Time:</p> <%= @recipe.cook_time %>
 <br>
-Ingredients:
+ <p class='label'>Instructions:</p> <%= @recipe.instructions %>
+<br>
+<p class='label'>Ingredients:</p>
 <br>
   <ul>
     <% @recipe.ingredients.each do |ingredient| %>
