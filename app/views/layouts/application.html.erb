@@ -34,14 +34,13 @@
     <div class="span12">
       <p class='login'>
             <% if current_user %>
-            <p>hello, <%= current_user.email %></p>
+            <p class="greeting">hello, <%= current_user.email %></p>
             <%= link_to 'Logout', session_path(session), method: :delete, data: {confirm: 'Are you sure?' } %>
             <% else %>
                 <% if params[:action] != 'new' && params[:controller] != 'users'  %>
                   <%= link_to 'Sign Up', new_user_path %>
                   <br>
                 <%= link_to 'Login', login_path %>
-                <br>
                 <br>
                 <% else %>
                 <%= link_to 'Login', login_path %>

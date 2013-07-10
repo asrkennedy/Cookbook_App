@@ -1,7 +1,6 @@
 <h2> <%= @recipe.name %></h2>
 <br>
-<%= image_tag(@recipe.image_url) unless @recipe.image_url.blank? %>
-<br>
+ <%= image_tag @recipe.recipe_image.detail.url %>
 <br>
 <p class='label'>Category:</p>
 <%= @recipe.category.name if @recipe.category %>

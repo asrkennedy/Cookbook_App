@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      session[:user_id] = @user.id
+      flash[:welcome] = "Thanks for registering! You can now access our site!"
       redirect_to recipes_path
     else
       render 'new'

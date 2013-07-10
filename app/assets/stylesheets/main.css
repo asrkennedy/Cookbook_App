@@ -47,7 +47,12 @@ div.footer {
   background-color: #65AAF7;
 }
 div.container {
-  padding-top: 50px;
+  padding-top: 30px;
+}
+
+p.greeting {
+  text-align: right;
+  font-size: 18px;
 }
 
 div.container h2 {

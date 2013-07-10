@@ -3,6 +3,8 @@
 <% @recipes.each do |recipe| %>
 <h4><%= link_to "#{recipe.name}", recipe_path(recipe) %></h4>
 <br>
+<%= image_tag recipe.recipe_image.thumb.url%>
+<br>
 <p class='label'>Category:</p> <%= recipe.category.name if recipe.category %>
 <br>
 <p class='label'>Cooking Time: </p><%= recipe.cook_time %>

@@ -7,6 +7,8 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'cancan'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development do
   gem 'pry-rails'

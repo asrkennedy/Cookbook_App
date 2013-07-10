@@ -34,8 +34,8 @@ Ingredients:
       <%= ingredient.name %>
     </div>
 <% end %>
-Image:
-<%= f.text_field :image_url %>
+<%= f.file_field :recipe_image %>
+<%= f.label :recipe_image %>
 <br>
 <%= f.submit submit_button_value %>
 <% end %>
