@@ -1,7 +1,13 @@
 class IngredientsController < ApplicationController
 load_and_authorize_resource
   def index
-    @ingredients = Ingredient.all
+    @q = Ingredient.search(params[:q])
+    @ingredients = @q.result(distinct: true)
+  end
+
+  def search
+    index
+    render :index
   end
 
   def show

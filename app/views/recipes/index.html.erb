@@ -1,4 +1,16 @@
 <h2>All your recipes!</h2>
+<div class="search">
+ <%= search_form_for @q, url: search_recipes_path, html: {method: :post}  do |f| %>
+      <p><%= f.label :name_start, 'Recipe Search:' %><%= f.text_field :name_start %>   <%= f.submit %></p>
+  <% end %>
+</div>
+<br>
+<div class="search">
+ <%= search_form_for @q, url: search_ingredients_path, html: {method: :post}  do |f| %>
+      <p><%= f.label :name_start, "Ingredient Search:" %><%= f.text_field :name_start %>     <%= f.submit %></p>
+  <% end %>
+</div>
+
 <br>
 <% @recipes.each do |recipe| %>
 <h4><%= link_to "#{recipe.name}", recipe_path(recipe) %></h4>

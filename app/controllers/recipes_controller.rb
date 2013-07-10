@@ -1,7 +1,14 @@
 class RecipesController < ApplicationController
 load_and_authorize_resource
+
   def index
-    @recipes = Recipe.all
+    @q = Recipe.search(params[:q])
+    @recipes = @q.result(distinct: true)
+  end
+
+  def search
+    index
+    render :index
   end
 
   def show

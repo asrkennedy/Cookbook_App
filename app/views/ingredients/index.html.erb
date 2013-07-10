@@ -1,4 +1,11 @@
 <h2>All your ingredients!</h2>
+
+<div class="search">
+ <%= search_form_for @q, url: search_ingredients_path, html: {method: :post}  do |f| %>
+      <p><%= f.label :name_start, "Ingredient Search:" %><%= f.text_field :name_start %>    <%= f.submit %></p>
+      <br>
+  <% end %>
+</div>
 <ol>
 <% @ingredients.each do |ingredient| %>
 <li><h4><%= link_to ingredient.name, ingredient_path(ingredient) %></h4>

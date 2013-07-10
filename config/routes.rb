@@ -4,8 +4,16 @@ CookbookApp::Application.routes.draw do
   resources :sessions, only: [:create, :destroy]
 
   resources :users
-  resources :ingredients
-  resources :recipes
+  resources :ingredients do
+    collection do
+      match 'search' => 'ingredients#search', :via => [:get, :post], :as => :search
+    end
+  end
+  resources :recipes do
+    collection do
+      match 'search' => 'recipes#search', :via => [:get, :post], :as => :search
+    end
+  end
   resources :categories
 
   root to: 'recipes#index'

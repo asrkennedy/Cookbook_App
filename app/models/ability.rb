@@ -9,6 +9,7 @@ class Ability
     else
       can :read, :all
       can :create, User
+      can :search, :all
     end
   end
 
