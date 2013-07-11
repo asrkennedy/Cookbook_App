@@ -10,6 +10,8 @@ gem 'cancan'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'ransack'
+gem 'nested_form'
+gem 'seed_dump'
 
 group :development do
   gem 'pry-rails'

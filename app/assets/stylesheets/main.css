@@ -74,3 +74,10 @@ p.label {
   background-color: #eee;
 margin-right: 30px;
 }
+
+.flash-message {
+  font-size: 18px;
+  font-weight: bold;
+  color: #215DA1;
+  text-align: right;
+}

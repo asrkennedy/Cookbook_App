@@ -12,8 +12,8 @@
 <p class='label'>Ingredients:</p>
 <br>
   <ul>
-    <% @recipe.ingredients.each do |ingredient| %>
-      <li><%=link_to ingredient.name, ingredient_path(ingredient) %> <br>
+    <% @recipe.ingredients_recipes.each do |ingredients_recipe| %>
+      <li><%=ingredients_recipe.quantity%> of <%=link_to ingredients_recipe.ingredient.name, ingredient_path(ingredients_recipe.ingredient) %> <br>
         </li>
     <%end%>
 </ul>

@@ -11,12 +11,12 @@
 <li><h4><%= link_to ingredient.name, ingredient_path(ingredient) %></h4>
 </li>
 
-<% if can? :create, Ingredient %>
-<%= link_to 'edit', edit_ingredient_path(ingredient) %> |
+  <% if can? :create, Ingredient %>
+  <%= link_to 'edit', edit_ingredient_path(ingredient) %> |
 
-<%= link_to 'delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %>
-<br>
-<% end %>
+  <%= link_to 'delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <br>
+  <% end %>
 <br>
 <% end %>
 </ol>
